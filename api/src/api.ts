@@ -9,7 +9,7 @@ const appRouter = t.router({
   helloWorld: t.procedure.query(() => {
     return "Hello, world!";
   }),
-  log: t.procedure
+  logApi: t.procedure
     .input((v) => {
       if (typeof v === "string") {
         return v;
@@ -17,7 +17,7 @@ const appRouter = t.router({
       throw new Error("Expected a string");
     })
     .mutation((req) => {
-      console.log(`Received: ${req}`);
+      console.log(`Received: ${req.input}`);
     }),
 });
 

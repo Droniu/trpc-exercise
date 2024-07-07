@@ -14,3 +14,8 @@ export const getHello = async () => {
   const result = await client.helloWorld.query();
   return result;
 };
+
+export const logAPI = async (message: string) => {
+  const result = await client.logApi.mutate(message);
+  return result;
+};
